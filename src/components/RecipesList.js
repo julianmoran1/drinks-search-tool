@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { RecetasContext } from "../context/RecetasContext";
+import { RecipesContext } from "../context/RecipesContext";
 import Recipe from "./Recipe";
 
 export default function RecipesList() {
 
     //extraer las recetas
-    const { recetas } = useContext(RecetasContext)
+    const { recetas } = useContext(RecipesContext)
     //console.log(recetas)
 
   return <div className="row mt-5">

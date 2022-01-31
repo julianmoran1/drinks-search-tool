@@ -2,14 +2,14 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import RecipesList from "./components/RecipesList";
 
-import CategoriasProvider from "./context/CategoriasContext";
-import RecetasProvider from "./context/RecetasContext";
+import CategoriesProvider from "./context/CategoriesContext";
+import RecipesProvider from "./context/RecipesContext";
 import ModalProvider from "./context/ModalContext";
 
 function App() {
   return (
-    <CategoriasProvider>
-      <RecetasProvider>
+    <CategoriesProvider>
+      <RecipesProvider>
         <ModalProvider>
           <Header />
           <div className="container mt-5">
@@ -17,8 +17,8 @@ function App() {
             <RecipesList />
           </div>
         </ModalProvider>
-      </RecetasProvider>
-    </CategoriasProvider>
+      </RecipesProvider>
+    </CategoriesProvider>
   );
 }
 

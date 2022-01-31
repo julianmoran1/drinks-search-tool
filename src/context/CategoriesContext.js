@@ -2,10 +2,10 @@ import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 
 //crear el context
-export const CategoriasContext = createContext();
+export const CategoriesContext = createContext();
 
 // provider donde están las funciones y state
-const CategoriasProvider = (props) => {
+const CategoriesProvider = (props) => {
 
     //crear el state del context
     const [categorias, guardarCategorias] = useState([])
@@ -21,10 +21,10 @@ const CategoriasProvider = (props) => {
     }, [])
 
     return(
-        <CategoriasContext.Provider value={{ categorias }}>
+        <CategoriesContext.Provider value={{ categorias }}>
             {props.children}
-        </CategoriasContext.Provider>
+        </CategoriesContext.Provider>
         )
 }
 
-export default CategoriasProvider;
+export default CategoriesProvider;

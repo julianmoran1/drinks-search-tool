@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { CategoriasContext } from "../context/CategoriasContext";
-import { RecetasContext } from "../context/RecetasContext";
+import { CategoriesContext } from "../context/CategoriesContext";
+import { RecipesContext } from "../context/RecipesContext";
 
 export default function Form() {
-  const { categorias } = useContext(CategoriasContext);
-  const { buscarRecetas, guardarConsultar } = useContext(RecetasContext);
+  const { categorias } = useContext(CategoriesContext);
+  const { buscarRecetas, guardarConsultar } = useContext(RecipesContext);
 
   const [busqueda, guardarBusqueda] = useState({
     nombre: "",

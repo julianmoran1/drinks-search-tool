@@ -87,7 +87,7 @@ export default function Recipe({ receta }) {
             <img
               className="img-fluid my-4"
               src={recipeInformation.strDrinkThumb}
-              alt={`Imagen de ${recipeInformation.strDrink}`}
+              alt={`Image of ${recipeInformation.strDrink}`}
             />
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               Ingredients and quantities
