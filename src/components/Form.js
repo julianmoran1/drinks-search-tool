@@ -7,8 +7,8 @@ export default function Form() {
   const { setSearch, guardarConsultar } = useContext(RecipesContext);
 
   const [busqueda, guardarBusqueda] = useState({
-    nombre: "",
-    categoria: "",
+    ingredient: "",
+    category: "",
   });
 
   const obtenerDatosReceta = (event) => {
@@ -32,7 +32,7 @@ export default function Form() {
         <div className="row">
           <div className="col-md-4">
             <input
-              name="nombre"
+              name="ingredient"
               className="form-control"
               type="text"
               placeholder="Search ingredient"
@@ -41,7 +41,7 @@ export default function Form() {
           </div>
           <div className="col-md-4">
             <select
-              name="categoria"
+              name="category"
               className="form-control"
               onChange={obtenerDatosReceta}
             >

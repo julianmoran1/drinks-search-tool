@@ -8,18 +8,18 @@ const RecipesProvider = (props) => {
     const [recipes, setRecipes] = useState([])
 
     const [search, setSearch] = useState({
-        nombre:"",
-        categoria:""
+        ingredient:"",
+        category:""
     })
 
-    const {nombre, categoria} = search
+    const {ingredient, category} = search
 
     const [consultar, guardarConsultar] = useState(false)
 
     useEffect(()=>{
         if (consultar){
             const getRecipes = async ()=>{
-                const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${nombre}&c=${categoria}`
+                const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}&c=${category}`
                 const result = await axios.get(url)
                 setRecipes(result.data.drinks)
             }
