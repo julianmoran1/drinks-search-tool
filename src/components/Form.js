@@ -22,7 +22,7 @@ export default function Form() {
   return (
     <div>
       <fieldset className="text-center">
-        <legend>Busca bebidas por categoría o ingrediente</legend>
+        <legend>Find Cocktail by category or ingredient</legend>
       </fieldset>
       <form className="col-12" onSubmit={event => {
         event.preventDefault()
@@ -35,7 +35,7 @@ export default function Form() {
               name="nombre"
               className="form-control"
               type="text"
-              placeholder="Buscar ingrediente"
+              placeholder="Search ingredient"
               onChange={obtenerDatosReceta}
             />
           </div>
@@ -59,7 +59,7 @@ export default function Form() {
           </div>
           <div className="col-md-4">
             <button type="submit" className="btn btn-block btn-primary">
-              Buscar recetas
+              Search recipes
             </button>
           </div>
         </div>

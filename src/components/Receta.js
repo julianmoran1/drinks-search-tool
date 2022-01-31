@@ -61,7 +61,7 @@ export default function Receta({ receta }) {
               type="button"
               className="btn btn-block btn-primary"
             >
-              Ver receta
+              View recipe
             </button>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Receta({ receta }) {
               <h2>{infoReceta.strDrink}</h2>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <h3>Instrucciones</h3>
+              <h3>Instructions</h3>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               {infoReceta.strInstructions}
@@ -90,7 +90,7 @@ export default function Receta({ receta }) {
               alt={`Imagen de ${infoReceta.strDrink}`}
             />
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              Ingredientes y cantidades
+              Ingredients and quantities
             </Typography>
             <ul>
               {mostrarIngredientes(infoReceta)}
