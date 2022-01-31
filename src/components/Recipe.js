@@ -24,12 +24,12 @@ export default function Recipe({ receta }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    guardarIdReceta(null);
+    setRecipeId(null);
     guardarReceta({})
   };
 
   // extraer valores del context
-  const { recipeInformation, guardarReceta, guardarIdReceta } = useContext(ModalContext);
+  const { recipeInformation, guardarReceta, setRecipeId } = useContext(ModalContext);
 
   //muestra y formatea los ingredientes
   const mostrarIngredientes = (recipeInformation) => {
@@ -55,7 +55,7 @@ export default function Recipe({ receta }) {
           <div className="card-body">
             <button
               onClick={() => {
-                guardarIdReceta(receta.idDrink);
+                setRecipeId(receta.idDrink);
                 handleOpen();
               }}
               type="button"
