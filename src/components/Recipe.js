@@ -17,7 +17,7 @@ const style = {
   p: 4,
 };
 
-export default function Recipe({ receta }) {
+export default function Recipe({ recipe }) {
   //configuracion modal material UI
 
   const [open, setOpen] = React.useState(false);
@@ -46,16 +46,16 @@ export default function Recipe({ receta }) {
     <>
       <div className="col-md-4 mb-3">
         <div className="card">
-          <h2 className="card-header">{receta.strDrink}</h2>
+          <h2 className="card-header">{recipe.strDrink}</h2>
           <img
             className="card-img-top"
-            src={receta.strDrinkThumb}
-            alt={`Image of ${receta.strDrink}`}
+            src={recipe.strDrinkThumb}
+            alt={`Image of ${recipe.strDrink}`}
           />
           <div className="card-body">
             <button
               onClick={() => {
-                setRecipeId(receta.idDrink);
+                setRecipeId(recipe.idDrink);
                 handleOpen();
               }}
               type="button"
