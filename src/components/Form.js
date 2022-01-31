@@ -4,7 +4,7 @@ import { RecipesContext } from "../context/RecipesContext";
 
 export default function Form() {
   const { categories } = useContext(CategoriesContext);
-  const { buscarRecetas, guardarConsultar } = useContext(RecipesContext);
+  const { setSearch, guardarConsultar } = useContext(RecipesContext);
 
   const [busqueda, guardarBusqueda] = useState({
     nombre: "",
@@ -26,7 +26,7 @@ export default function Form() {
       </fieldset>
       <form className="col-12" onSubmit={event => {
         event.preventDefault()
-        buscarRecetas(busqueda)
+        setSearch(busqueda)
         guardarConsultar(true)
       }}>
         <div className="row">

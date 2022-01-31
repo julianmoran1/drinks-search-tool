@@ -7,7 +7,7 @@ const RecipesProvider = (props) => {
 
     const [recipes, setRecipes] = useState([])
 
-    const [search, buscarRecetas] = useState({
+    const [search, setSearch] = useState({
         nombre:"",
         categoria:""
     })
@@ -29,7 +29,7 @@ const RecipesProvider = (props) => {
 
 
     return(
-        <RecipesContext.Provider value={{recipes, buscarRecetas, guardarConsultar}}>
+        <RecipesContext.Provider value={{recipes, setSearch, guardarConsultar}}>
             {props.children}
         </RecipesContext.Provider>
     )
