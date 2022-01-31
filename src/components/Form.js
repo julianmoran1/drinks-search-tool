@@ -3,7 +3,7 @@ import { CategoriesContext } from "../context/CategoriesContext";
 import { RecipesContext } from "../context/RecipesContext";
 
 export default function Form() {
-  const { categorias } = useContext(CategoriesContext);
+  const { categories } = useContext(CategoriesContext);
   const { buscarRecetas, guardarConsultar } = useContext(RecipesContext);
 
   const [busqueda, guardarBusqueda] = useState({
@@ -47,12 +47,12 @@ export default function Form() {
             >
               <option value="">Select category</option>
               {/* Get options from api  */}
-              {categorias.map((categoria) => (
+              {categories.map((category) => (
                 <option
-                  key={categoria.strCategory}
-                  value={categoria.strCategory}
+                  key={category.strCategory}
+                  value={category.strCategory}
                 >
-                  {categoria.strCategory}
+                  {category.strCategory}
                 </option>
               ))}
             </select>
