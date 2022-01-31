@@ -25,21 +25,21 @@ export default function Recipe({ receta }) {
   const handleClose = () => {
     setOpen(false);
     setRecipeId(null);
-    guardarReceta({})
+    setRecipe({})
   };
 
   // extraer valores del context
-  const { recipeInformation, guardarReceta, setRecipeId } = useContext(ModalContext);
+  const { recipeInformation, setRecipe, setRecipeId } = useContext(ModalContext);
 
   //muestra y formatea los ingredientes
-  const mostrarIngredientes = (recipeInformation) => {
-    let ingredientes = []
+  const showIngredients = (recipeInformation) => {
+    let ingredients = []
     for (let i=1; i<16; i++){
       if(recipeInformation[`strIngredient${i}`]) {
-        ingredientes.push(<li>{recipeInformation[`strIngredient${i}`]} - {recipeInformation[`strMeasure${i}`]}</li>)
+        ingredients.push(<li>{recipeInformation[`strIngredient${i}`]} - {recipeInformation[`strMeasure${i}`]}</li>)
       }
     }
-    return ingredientes
+    return ingredients
   }
 
   return (
@@ -93,7 +93,7 @@ export default function Recipe({ receta }) {
               Ingredients and quantities
             </Typography>
             <ul>
-              {mostrarIngredientes(recipeInformation)}
+              {showIngredients(recipeInformation)}
             </ul>
           
           </Box>
