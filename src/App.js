@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Form from "./components/Form";
-import ListaRecetas from "./components/ListaRecetas";
+import RecipesList from "./components/RecipesList";
 
 import CategoriasProvider from "./context/CategoriasContext";
 import RecetasProvider from "./context/RecetasContext";
@@ -14,7 +14,7 @@ function App() {
           <Header />
           <div className="container mt-5">
             <Form />
-            <ListaRecetas />
+            <RecipesList />
           </div>
         </ModalProvider>
       </RecetasProvider>

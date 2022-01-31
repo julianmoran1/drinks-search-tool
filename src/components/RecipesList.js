@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { RecetasContext } from "../context/RecetasContext";
 import Recipe from "./Recipe";
 
-export default function ListaRecetas() {
+export default function RecipesList() {
 
     //extraer las recetas
     const { recetas } = useContext(RecetasContext)
