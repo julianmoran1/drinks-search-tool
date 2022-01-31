@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { RecetasContext } from "../context/RecetasContext";
-import Receta from "./Receta";
+import Recipe from "./Recipe";
 
 export default function ListaRecetas() {
 
@@ -9,6 +9,6 @@ export default function ListaRecetas() {
     //console.log(recetas)
 
   return <div className="row mt-5">
-    {recetas.map((receta)=><Receta key={receta.idDrink} receta={receta} />)}
+    {recetas.map((receta)=><Recipe key={receta.idDrink} receta={receta} />)}
   </div>;
 }

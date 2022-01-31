@@ -17,7 +17,7 @@ const style = {
   p: 4,
 };
 
-export default function Receta({ receta }) {
+export default function Recipe({ receta }) {
   //configuracion modal material UI
 
   const [open, setOpen] = React.useState(false);
@@ -29,14 +29,14 @@ export default function Receta({ receta }) {
   };
 
   // extraer valores del context
-  const { infoReceta, guardarReceta, guardarIdReceta } = useContext(ModalContext);
+  const { recipeInformation, guardarReceta, guardarIdReceta } = useContext(ModalContext);
 
   //muestra y formatea los ingredientes
-  const mostrarIngredientes = (infoReceta) => {
+  const mostrarIngredientes = (recipeInformation) => {
     let ingredientes = []
     for (let i=1; i<16; i++){
-      if(infoReceta[`strIngredient${i}`]) {
-        ingredientes.push(<li>{infoReceta[`strIngredient${i}`]} - {infoReceta[`strMeasure${i}`]}</li>)
+      if(recipeInformation[`strIngredient${i}`]) {
+        ingredientes.push(<li>{recipeInformation[`strIngredient${i}`]} - {recipeInformation[`strMeasure${i}`]}</li>)
       }
     }
     return ingredientes
@@ -50,7 +50,7 @@ export default function Receta({ receta }) {
           <img
             className="card-img-top"
             src={receta.strDrinkThumb}
-            alt={`Imagen de ${receta.strDrink}`}
+            alt={`Image of ${receta.strDrink}`}
           />
           <div className="card-body">
             <button
@@ -76,24 +76,24 @@ export default function Receta({ receta }) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              <h2>{infoReceta.strDrink}</h2>
+              <h2>{recipeInformation.strDrink}</h2>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               <h3>Instructions</h3>
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {infoReceta.strInstructions}
+              {recipeInformation.strInstructions}
             </Typography>
             <img
               className="img-fluid my-4"
-              src={infoReceta.strDrinkThumb}
-              alt={`Imagen de ${infoReceta.strDrink}`}
+              src={recipeInformation.strDrinkThumb}
+              alt={`Imagen de ${recipeInformation.strDrink}`}
             />
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               Ingredients and quantities
             </Typography>
             <ul>
-              {mostrarIngredientes(infoReceta)}
+              {mostrarIngredientes(recipeInformation)}
             </ul>
           
           </Box>
