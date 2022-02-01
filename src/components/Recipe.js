@@ -18,7 +18,7 @@ const style = {
 };
 
 export default function Recipe({ recipe }) {
-  //configuracion modal material UI
+  //modal material UI config
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -28,10 +28,10 @@ export default function Recipe({ recipe }) {
     setRecipe({})
   };
 
-  // extraer valores del context
+  // extract values from context
   const { recipeInformation, setRecipe, setRecipeId } = useContext(ModalContext);
 
-  //muestra y formatea los ingredientes
+  //shows and formats ingredients
   const showIngredients = (recipeInformation) => {
     let ingredients = []
     for (let i=1; i<16; i++){

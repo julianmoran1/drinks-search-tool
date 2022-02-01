@@ -6,7 +6,7 @@ export default function Form() {
   const { categories } = useContext(CategoriesContext);
   const { setSearch, setQuery } = useContext(RecipesContext);
 
-  const [busqueda, saveSearch] = useState({
+  const [search, saveSearch] = useState({
     ingredient: "",
     category: "",
   });
@@ -14,7 +14,7 @@ export default function Form() {
   const getRecipeData = (event) => {
     event.preventDefault();
     saveSearch({
-      ...busqueda,
+      ...search,
       [event.target.name]: event.target.value,
     });
   };
@@ -26,7 +26,7 @@ export default function Form() {
       </fieldset>
       <form className="col-12" onSubmit={event => {
         event.preventDefault()
-        setSearch(busqueda)
+        setSearch(search)
         setQuery(true)
       }}>
         <div className="row">

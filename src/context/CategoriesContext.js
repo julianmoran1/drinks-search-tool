@@ -1,16 +1,16 @@
 import axios from "axios";
 import { createContext, useState, useEffect } from "react";
 
-//crear el context
+//creates the context
 export const CategoriesContext = createContext();
 
-// provider donde están las funciones y state
+// provides the functions and state
 const CategoriesProvider = (props) => {
 
-    //crear el state del context
+    //creates the state of the context
     const [categories, setCategories] = useState([])
 
-    //ejecutar llamado a la API
+    // API call
     useEffect(()=>{
         const getCategories = async () => {
             const url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"

@@ -4,9 +4,8 @@ import Recipe from "./Recipe";
 
 export default function RecipesList() {
 
-    //extraer las recetas
+    //extracts the recipes
     const { recipes } = useContext(RecipesContext)
-    //console.log(recetas)
 
   return <div className="row mt-5">
     {recipes.map((recipe)=><Recipe key={recipe.idDrink} recipe={recipe} />)}
