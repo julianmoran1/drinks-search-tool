@@ -14,10 +14,10 @@ const RecipesProvider = (props) => {
 
     const {ingredient, category} = search
 
-    const [consultar, guardarConsultar] = useState(false)
+    const [query, setQuery] = useState(false)
 
     useEffect(()=>{
-        if (consultar){
+        if (query){
             const getRecipes = async ()=>{
                 const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}&c=${category}`
                 const result = await axios.get(url)
@@ -29,7 +29,7 @@ const RecipesProvider = (props) => {
 
 
     return(
-        <RecipesContext.Provider value={{recipes, setSearch, guardarConsultar}}>
+        <RecipesContext.Provider value={{recipes, setSearch, setQuery}}>
             {props.children}
         </RecipesContext.Provider>
     )

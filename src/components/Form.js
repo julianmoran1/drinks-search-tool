@@ -4,16 +4,16 @@ import { RecipesContext } from "../context/RecipesContext";
 
 export default function Form() {
   const { categories } = useContext(CategoriesContext);
-  const { setSearch, guardarConsultar } = useContext(RecipesContext);
+  const { setSearch, setQuery } = useContext(RecipesContext);
 
-  const [busqueda, guardarBusqueda] = useState({
+  const [busqueda, saveSearch] = useState({
     ingredient: "",
     category: "",
   });
 
-  const obtenerDatosReceta = (event) => {
+  const getRecipeData = (event) => {
     event.preventDefault();
-    guardarBusqueda({
+    saveSearch({
       ...busqueda,
       [event.target.name]: event.target.value,
     });
@@ -27,7 +27,7 @@ export default function Form() {
       <form className="col-12" onSubmit={event => {
         event.preventDefault()
         setSearch(busqueda)
-        guardarConsultar(true)
+        setQuery(true)
       }}>
         <div className="row">
           <div className="col-md-4">
@@ -36,14 +36,14 @@ export default function Form() {
               className="form-control"
               type="text"
               placeholder="Search ingredient"
-              onChange={obtenerDatosReceta}
+              onChange={getRecipeData}
             />
           </div>
           <div className="col-md-4">
             <select
               name="category"
               className="form-control"
-              onChange={obtenerDatosReceta}
+              onChange={getRecipeData}
             >
               <option value="">Select category</option>
               {/* Get options from api  */}
